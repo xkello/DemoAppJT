@@ -1,0 +1,28 @@
+### Create new request for user by id - 3
+POST http://localhost:8081/api/vacations?currentUserId=3
+Content-Type: application/json
+
+{
+  "startDate": "2025-08-10",
+  "startPartOfDay": "Evening",
+  "endDate": "2025-08-12",
+  "endPartOfDay": "Morning"
+}
+
+### Approved by manager
+PUT http://localhost:8081/api/vacations/1/status
+Content-Type: application/json
+
+{
+  "status": "APPROVED_BY_MANAGER",
+  "currentUserId": 3
+}
+
+### Approved by director
+PUT http://localhost:8081/api/vacations/1/status
+Content-Type: application/json
+
+{
+  "status": "APPROVED_BY_DIRECTOR",
+  "currentUserId": 3
+}
